@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Post, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'valid?' do
+    it 'responds with false if link is an invalid url' do
+      expect(FactoryGirl.build(:post, link: 'blah')).not_to be_valid
+    end
+  end
 end
