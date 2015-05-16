@@ -3,11 +3,12 @@ html
   head
     title Suckify
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
     nav.navbar.navbar-default.navbar-fixed-top
-      .container-fluid
+      .container
         .navbar-header
           button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button"
             span.sr-only Toggle navigation
@@ -23,6 +24,5 @@ html
             - else
               li = link_to 'Sign Up', new_user_registration_path
               li = link_to 'Sign In', new_user_session_path
-    .container
-      = flash_messages
-      = yield
+    = flash_messages
+    = yield
