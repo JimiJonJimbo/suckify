@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  layout 'home', only: :index
+
   before_action :authenticate_user!, only: [:create, :new]
 
   def create
