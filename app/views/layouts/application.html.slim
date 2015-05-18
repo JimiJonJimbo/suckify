@@ -7,22 +7,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    nav.navbar.navbar-default.navbar-fixed-top
-      .container
-        .navbar-header
-          button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button"
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          = link_to "Suckify", root_path, class: "navbar-brand"
-        #navbar.navbar-collapse.collapse
-          ul.nav.navbar-nav.navbar-right
-            - if user_signed_in?
-              li = link_to 'New Post', new_post_path
-              li = link_to 'Sign Out', destroy_user_session_path, :method => :delete
-            - else
-              li = link_to 'Sign Up', new_user_registration_path
-              li = link_to 'Sign In', new_user_session_path
-    = flash_messages
-    = yield
+    = render 'shared/navbar'
+    .container
+      = flash_messages
+      = yield

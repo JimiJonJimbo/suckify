@@ -13,9 +13,7 @@ feature "User views homepage" do
     scenario "sees posts" do
       post = create(:post)
       visit root_path
-      expect(page).to have_content post.title
-      expect(page).to have_link post.link, href: post.link
-      expect(page).to have_content post.description
+      expect(page).to have_link post.title, href: post.link
     end
   end
 

@@ -19,9 +19,7 @@ feature "User creates new post" do
       fill_in "Description", with: "It's just an example"
       click_on "Create Post"
       expect(page).to have_content "Post successfully created"
-      expect(page).to have_link "http://www.example.com/", href: "http://www.example.com/"
-      expect(page).to have_content "This site sucks"
-      expect(page).to have_content "It's just an example"
+      expect(page).to have_link "This site sucks", href: "http://www.example.com/"
     end
   end
 end
