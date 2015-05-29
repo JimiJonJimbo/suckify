@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  layout 'home', only: :index
+  # layout 'home', only: :index
 
   before_action :authenticate_user!, only: [:create, :new]
 
