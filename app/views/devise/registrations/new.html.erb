@@ -1,9 +1,7 @@
-<div class="container">
-  <div class="panel panel-default form-login">
+<div class="small-centered">
+  <div class="panel panel-default">
     <div class="panel-body">
-      <div class="form-group">
-        <h2>Sign up</h2>
-      </div>
+      <h2 class="form-group">Sign up</h2>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
