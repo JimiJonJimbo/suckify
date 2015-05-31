@@ -16,7 +16,6 @@ feature "User creates new post" do
       visit new_post_path
       fill_in "Link", with: "http://www.example.com/"
       fill_in "Title", with: "This site sucks"
-      fill_in "Description", with: "It's just an example"
       click_on "Create Post"
       expect(page).to have_content "Post successfully created"
       expect(page).to have_link "This site sucks", href: "http://www.example.com/"
