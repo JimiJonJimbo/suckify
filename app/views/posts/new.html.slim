@@ -1,8 +1,8 @@
 .medium-centered
   .panel.panel-default
     .panel-body
-      h2.form-group New post
+      h2 New post
       = simple_form_for @post do |f|
         = f.input :link
         = f.input :title
-        = f.button :submit, class: "btn btn-primary btn-block"
+        = f.button :submit, class: "btn btn-primary"
