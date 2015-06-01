@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'acts_as_votable'
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'

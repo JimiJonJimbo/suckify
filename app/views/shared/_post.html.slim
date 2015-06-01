@@ -1,4 +1,7 @@
 .panel.panel-default
   .panel-body
-    h4 = link_to post.title, post.link
+    h4.post-body = link_to post.title, post.link
+    .panel.panel-default.this-sucks-panel
+      .panel-body.panel-body-small = link_to "This sucks", "#"
+      .panel-footer.panel-footer-small = "#{post.votes_for.size} votes"
   .panel-footer = "Posted by #{post.user.username} #{time_ago_in_words(post.created_at)} ago"
