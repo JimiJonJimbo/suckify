@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   # layout 'home', only: :index
 
-  before_action :authenticate_user!, only: [:create, :new]
+  before_action :authenticate_user!, only: [:create, :new, :upvote]
 
   def create
     @post = current_user.posts.build(post_params)
@@ -37,10 +37,10 @@ class PostsController < ApplicationController
 
   private
 
-    def post_params
-      params.require(:post).permit(
-        :link,
-        :title,
-        :description)
-    end
+  def post_params
+    params.require(:post).permit(
+      :link,
+      :title,
+      :description)
+  end
 end

@@ -2,6 +2,10 @@
   .panel-body
     h4.post-body = link_to post.title, post.link
     .panel.panel-default.this-sucks-panel
-      .panel-body.panel-body-small = link_to "This sucks", upvote_post_path(post), method: :put, remote: true
-      .panel-footer.panel-footer-small id="#{post.slug}-votes" = "#{pluralize post.votes_for.size, 'vote'}"
+      .panel-body.votes-panel-body id="#{post.slug}-suck-it"
+        - if user_signed_in? and current_user.voted_up_on?(post)
+          | Sucked
+        - else
+          = link_to "Suck it", upvote_post_path(post), method: :put, remote: true
+      .panel-footer.votes-panel-footer id="#{post.slug}-sucks" = "#{pluralize post.votes_for.size, 'suck'}"
   .panel-footer = "Posted by #{post.user.username} #{time_ago_in_words(post.created_at)} ago"
