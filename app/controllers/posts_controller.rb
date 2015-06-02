@@ -25,6 +25,16 @@ class PostsController < ApplicationController
     @post = Post.friendly.find(params[:id])
   end
 
+  def upvote
+    @post = Post.friendly.find(params[:id])
+    @post.upvote_by current_user
+
+    respond_to do |format|
+      format.html { redirect_to @post }
+      format.js
+    end
+  end
+
   private
 
     def post_params

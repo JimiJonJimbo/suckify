@@ -1,0 +1,1 @@
+$("#<%= @post.slug %>-votes").html("<%= pluralize @post.votes_for.size, 'vote' %>")
