@@ -33,6 +33,10 @@ group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :test do
   gem 'capybara'
   gem 'capybara-webkit'
@@ -40,3 +44,5 @@ group :test do
   gem 'factory_girl_rails'
   gem 'launchy'
 end
+
+ruby '2.1.2'
