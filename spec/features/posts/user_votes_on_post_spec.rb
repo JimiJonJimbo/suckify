@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "User can vote" do
+feature "User votes on post" do
   let(:user) { create(:user) }
   let(:post) { create(:post, user: user) }
 
@@ -14,8 +14,11 @@ feature "User can vote" do
   end
 
   context "when logged in" do
-    scenario "can vote" do
+    before do
       login_as user
+    end
+
+    scenario "can vote" do
       visit post_path(post)
       expect(page).to have_content "0 votes"
       click_on "This sucks"
@@ -25,7 +28,6 @@ feature "User can vote" do
 
     scenario "cannot vote if they have already voted" do
       post.liked_by user
-      login_as user
       visit post_path(post)
       expect(page).to have_content "Voted"
       expect(page).to have_content "1 vote"

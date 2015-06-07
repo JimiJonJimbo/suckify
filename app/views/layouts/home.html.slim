@@ -15,9 +15,6 @@ html
           | The future of suckage.
           br
           | Now.
-        - if user_signed_in?
-          = link_to "Share something that sucks.", new_post_path, class: "btn btn-lg btn-primary"
-        - else
-          = link_to "Share something that sucks.", new_user_registration_path, class: "btn btn-lg btn-primary"
+        = link_to "Share something that sucks.", new_post_path, class: "btn btn-lg btn-primary"
     .container
       = yield
