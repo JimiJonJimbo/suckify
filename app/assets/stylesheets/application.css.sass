@@ -17,6 +17,8 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
 
+// general styles
+
 body
   font-family: 'Open Sans', sans-serif
   background-color: #f1f1f1
@@ -30,6 +32,28 @@ body
 .navbar-logo
   max-width: 150px
 
+.small-centered
+  max-width: 350px
+  margin: 0 auto
+
+.medium-centered
+  max-width: 550px
+  margin: 0 auto
+
+.medium-centered-flash
+  max-width: 550px
+  margin: 0 auto 20px
+
+// forms
+
+.form-control
+  background-color: #fbfbfb
+
+label
+  font-weight: normal
+
+// homepage
+
 .home-hero
   background: #000 url(one-cactus-dark.jpg)
   background-repeat: no-repeat
@@ -38,11 +62,11 @@ body
   text-align: center
   padding: 8rem 0 4rem 0
 
-.form-control
-  background-color: #fbfbfb
+h1.home-hero-heading
+  font-size: 52px
+  margin-bottom: 24px
 
-label
-  font-weight: normal
+// posts
 
 .post-body
   float: left
@@ -55,15 +79,3 @@ label
   font-size: 10px
   padding: 5px
   text-align: center
-
-.small-centered
-  max-width: 350px
-  margin: 0 auto
-
-.medium-centered
-  max-width: 550px
-  margin: 0 auto
-
-.medium-centered-flash
-  max-width: 550px
-  margin: 0 auto 20px

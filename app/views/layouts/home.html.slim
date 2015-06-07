@@ -11,7 +11,13 @@ html
     .jumbotron.home-hero
       .container
         = flash_messages
-        h1 The future of suckage. Now.
-        p Share something that sucks.
+        h1.home-hero-heading
+          | The future of suckage.
+          br
+          | Now.
+        - if user_signed_in?
+          = link_to "Share something that sucks.", new_post_path, class: "btn btn-lg btn-primary"
+        - else
+          = link_to "Share something that sucks.", new_user_registration_path, class: "btn btn-lg btn-primary"
     .container
       = yield
