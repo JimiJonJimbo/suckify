@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     member do
-      put "upvote", to: "posts#upvote"
+      put "suck", to: "posts#suck"
     end
   end
 

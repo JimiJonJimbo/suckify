@@ -6,6 +6,6 @@
         - if current_user and current_user.voted_for? post
           | Sucked
         - else
-          = link_to "Suck it", upvote_post_path(post), method: :put, remote: true
+          = link_to "Suck it", suck_post_path(post), method: :put, remote: true
       .panel-footer.sucks-panel id="#{post.slug}-sucks" = "#{pluralize post.votes_for.size, 'suck'}"
   .panel-footer = "Posted by #{post.user.username} #{time_ago_in_words(post.created_at)} ago"

@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     @post = Post.friendly.find(params[:id])
   end
 
-  def upvote
+  def suck
     @post = Post.friendly.find(params[:id])
     @post.upvote_by current_user
 
