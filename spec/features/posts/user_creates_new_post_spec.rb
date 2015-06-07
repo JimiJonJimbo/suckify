@@ -18,7 +18,7 @@ feature "User creates new post" do
       fill_in "Title", with: "This site sucks"
       click_on "Create Post"
       expect(current_path).to eq "/posts/this-site-sucks"
-      expect(page).to have_content "Post successfully created"
+      expect(page).to have_content "Post successfully created."
       expect(page).to have_link "This site sucks", href: "http://www.example.com/"
       expect(page).to have_content user.username
       expect(page).to have_content "less than a minute ago"
