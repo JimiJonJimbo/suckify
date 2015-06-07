@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     @post = Post.friendly.find(params[:id])
   end
 
-  def suck
+  def vote
     @post = Post.friendly.find(params[:id])
     @post.upvote_by current_user
 
@@ -36,9 +36,9 @@ class PostsController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { redirect_to new_user_session_path, notice: "You must log in to suck it.", status: 303 }
+        format.html { redirect_to new_user_session_path, notice: "You must log in to vote.", status: 303 }
         format.js do
-          flash[:notice] = "You must log in to suck it."
+          flash[:notice] = "You must log in to vote."
           flash.keep(:notice)
           render js: "window.location.pathname = #{new_user_session_path.to_json}"
         end
