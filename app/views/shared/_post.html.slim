@@ -2,12 +2,12 @@
   .panel-body
     h4.post-body = link_to post.title, post.link
     .panel.panel-default.voting-panel
-      .panel-body.this-sucks-panel id="#{post.slug}-this-sucks"
+      .panel-body.this-sucks-panel id="#{post.id}-this-sucks"
         - if current_user and current_user.voted_for? post
           = render 'shared/voted'
         - else
           = link_to vote_post_path(post), method: :put, remote: true do
             = render 'shared/this_sucks'
-      .panel-footer.votes-panel id="#{post.slug}-votes"
+      .panel-footer.votes-panel id="#{post.id}-votes"
         = "#{pluralize post.votes_for.size, 'vote'}"
   .panel-footer = "Posted by #{post.user.username} #{time_ago_in_words(post.created_at)} ago"

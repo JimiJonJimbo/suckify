@@ -1,2 +1,2 @@
-$("#<%= @post.slug %>-this-sucks").html("<%= escape_javascript render('shared/voted') %>");
-$("#<%= @post.slug %>-votes").html("<%= pluralize @post.votes_for.size, 'vote' %>")
+$("#<%= @post.id %>-this-sucks").html("<%= escape_javascript render('shared/voted') %>");
+$("#<%= @post.id %>-votes").html("<%= pluralize @post.votes_for.size, 'vote' %>")

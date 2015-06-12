@@ -22,11 +22,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.friendly.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def vote
-    @post = Post.friendly.find(params[:id])
+    @post = Post.find(params[:id])
     @post.upvote_by current_user
 
     if current_user
