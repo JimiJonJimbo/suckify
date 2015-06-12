@@ -11,6 +11,10 @@ html
     .jumbotron.home-hero
       .container
         = flash_messages
+        = link_to "https://www.youtube.com/watch?v=jPDsil1LKpo", target: "_blank", class: "video-link" do
+          i.glyphicon.glyphicon-play-circle
+          | What is Suckify? Watch the video.
+        end
         h1.home-hero-heading
           | The future of suckage.
           br
