@@ -1,7 +1,9 @@
 .panel.panel-default
   .panel-body
-    = image_tag post.thumbnail, class: "post-thumbnail"
-    h4.post-title = link_to post.title, post.link
+    .post-thumbnail
+      = link_to image_tag(post.thumbnail, class: "img-thumbnail"), post.link
+    .post-title
+      h4 = link_to post.title, post.link
     .panel.panel-primary.voting-panel
       .panel-body.this-sucks-panel id="#{post.id}-this-sucks"
         - if current_user and current_user.voted_for? post
