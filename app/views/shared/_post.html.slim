@@ -1,7 +1,7 @@
 .panel.panel-default
   .panel-body
     h4.post-body = link_to post.title, post.link
-    .panel.panel-default.voting-panel
+    .panel.panel-primary.voting-panel
       .panel-body.this-sucks-panel id="#{post.id}-this-sucks"
         - if current_user and current_user.voted_for? post
           = render 'shared/voted'
