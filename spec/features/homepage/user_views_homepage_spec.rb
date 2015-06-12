@@ -10,10 +10,12 @@ feature "User views homepage" do
       expect(page).to have_link "Log in", href: new_user_session_path
     end
 
-    scenario "sees posts" do
-      post = create(:post)
+    scenario "sees posts ordered by score" do
+      first_post = create(:post, title: "The first post", created_at: Date.new(2015, 1, 1), user: user)
+      second_post = create(:post, title: "The second post", created_at: Date.new(2015, 1, 2), user: user)
       visit root_path
-      expect(page).to have_link post.title, href: post.link
+      expect(page).to have_link first_post.title, href: first_post.link
+      expect(page.body.index(second_post.title)).to be < page.body.index(first_post.title)
     end
 
     scenario "must log in to post" do
