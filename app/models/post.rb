@@ -1,6 +1,3 @@
-require 'embedly'
-require 'json'
-
 class Post < ActiveRecord::Base
   acts_as_votable
 
@@ -9,18 +6,7 @@ class Post < ActiveRecord::Base
   validates :link, url: true
 
   def thumbnail
-    embedly_api = Embedly::API.new :key => '7538ada32412465384e838619f4fc31e',
-        :user_agent => 'Mozilla/5.0 (compatible; mytestapp/1.0; my@email.com)'
-
-    obj = embedly_api.extract url: link
-    o = obj.first
-    image = o.images.first
-
-    if image.present?
-      return image['url']
-    else
-      return nil
-    end
+    return nil
   end
 
   def score
