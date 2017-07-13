@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/flori/json.git
+  revision: 7f4cfd853f2c919d854fb95548a19980feff17e8
+  branch: v1.8
+  specs:
+    json (1.8.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -89,7 +96,6 @@ GEM
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    json (1.8.2)
     launchy (2.4.2)
       addressable (~> 2.3)
     mail (2.5.4)
@@ -230,6 +236,7 @@ DEPENDENCIES
   friendly_id
   jbuilder (~> 2.0)
   jquery-rails
+  json!
   launchy
   pg
   pry
@@ -249,7 +256,7 @@ DEPENDENCIES
   validate_url
 
 RUBY VERSION
-   ruby 2.1.2p95
+   ruby 2.4.0p0
 
 BUNDLED WITH
    1.15.1

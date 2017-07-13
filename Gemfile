@@ -8,6 +8,7 @@ gem 'devise'
 gem 'friendly_id'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem 'json', github: 'flori/json', branch: 'v1.8'
 gem 'pg'
 gem 'rails', '4.1.5'
 gem 'sass-rails', '~> 4.0.3'
@@ -45,4 +46,4 @@ group :test do
   gem 'launchy'
 end
 
-ruby '2.1.2'
+ruby '2.4.0'
