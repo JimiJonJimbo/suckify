@@ -6,7 +6,7 @@
       h4 = link_to post.title, post.link
     .panel.panel-primary.voting-panel
       .panel-body.this-sucks-panel id="#{post.id}-this-sucks"
-        - if current_user && current_user.voted_for? post
+        - if current_user and current_user.voted_for? post
           = render 'shared/voted'
         - else
           = link_to vote_post_path(post), method: :put, remote: true do
