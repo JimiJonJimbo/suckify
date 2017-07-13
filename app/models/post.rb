@@ -1,3 +1,5 @@
+require 'link_thumbnailer'
+
 class Post < ActiveRecord::Base
   acts_as_votable
 
@@ -6,7 +8,7 @@ class Post < ActiveRecord::Base
   validates :link, url: true
 
   def thumbnail
-    return nil
+    LinkThumbnailer.generate(link).images.first || link
   end
 
   def score
