@@ -4,10 +4,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   validates :link, url: true
-
-  def thumbnail
-    return nil
-  end
+  validates :thumbnail, url: true, allow_blank: true
 
   def score
     s = votes_for.count
