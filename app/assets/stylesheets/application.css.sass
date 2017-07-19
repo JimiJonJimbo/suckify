@@ -47,7 +47,7 @@ body
 
 // disable the extra large breakpoint
 
-@media (min-width: 992px)
+@media screen and (min-width: 992px)
   .container
     width: 992px
 
@@ -61,6 +61,11 @@ label
 
 // homepage
 
+@media screen and (min-width: 768px)
+  .container .jumbotron, .container-fluid .jumbotron
+    padding-left: 30px
+    padding-right: 30px
+
 .jumbotron
   background: url(hero.jpg)
   background-size: cover
@@ -72,9 +77,15 @@ label
   margin-top: 180px
   margin-bottom: 30px
 
+  @media screen and (max-width: 768px)
+    margin-top: 0px
+
 .home-hero-heading
   font-weight: 700
   font-size: 48px
+
+  @media screen and (max-width: 768px)
+    margin-top: 15px
 
 .home-hero-subheading
   font-size: 24px
