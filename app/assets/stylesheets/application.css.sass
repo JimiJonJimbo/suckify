@@ -45,6 +45,12 @@ body
   max-width: 550px
   margin: 0 auto 20px
 
+// disable the extra large breakpoint
+
+@media (min-width: 992px)
+  .container
+    width: 992px
+
 // forms
 
 .form-control
@@ -58,12 +64,23 @@ label
 .jumbotron
   background: url(hero.jpg)
   background-size: cover
-  background-position: center center
+  background-position: center bottom
   color: #fff
 
-h1.home-hero-heading
-  font-size: 52px
-  margin-bottom: 24px
+.home-hero
+  text-align: center
+  margin-top: 180px
+  margin-bottom: 30px
+
+.home-hero-heading
+  font-weight: 700
+  font-size: 48px
+
+.home-hero-subheading
+  font-size: 24px
+
+.home-hero-button
+  text-align: center
 
 // posts
 

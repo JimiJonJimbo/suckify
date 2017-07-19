@@ -12,10 +12,23 @@ html
     .container
       .jumbotron
         = flash_messages
-        h1.home-hero-heading
-          | The future of suckage.
-          br
-          | Now.
-        = link_to "Share something that sucks.", new_post_path, class: "btn btn-lg btn-primary"
+        .row.home-hero
+          .col-sm-4
+            .home-hero-heading
+              | Share
+            .home-hero-subheading
+              | things that suck.
+          .col-sm-4
+            .home-hero-heading
+              | Discover
+            .home-hero-subheading
+              | things that suck.
+          .col-sm-4
+            .home-hero-heading
+              | Become
+            .home-hero-subheading
+              | a suckier person.
+        .home-hero-button
+          = link_to "Share something that sucks.", new_post_path, class: "btn btn-lg btn-primary"
     .container
       = yield
