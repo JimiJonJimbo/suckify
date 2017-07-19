@@ -9,8 +9,8 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
   body
     = render 'shared/navbar'
-    .jumbotron.home-hero
-      .container
+    .container
+      .jumbotron.home-hero
         = flash_messages
         = link_to "https://www.youtube.com/watch?v=jPDsil1LKpo", target: "_blank", class: "video-link" do
           i.glyphicon.glyphicon-play-circle
