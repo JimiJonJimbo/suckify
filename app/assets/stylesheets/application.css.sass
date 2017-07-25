@@ -19,16 +19,21 @@
 
 // general styles
 
+$white: #ffffff
+$light: #f1f1f1
+$dark:  #3d3d3d
+$black: #000000
+
 *
   border-radius: 0 !important
 
 body
   font-family: 'Oxygen', sans-serif
-  background-color: #f1f1f1
+  background-color: $light
   padding-top: 70px
 
 .navbar
-  background-color: #f1f1f1
+  background-color: $light
 
 .navbar-logo
   height: 30px
@@ -70,10 +75,10 @@ label
     padding-right: 30px
 
 .jumbotron
-  background: url(hero.jpg)
+  background: $dark url(hero.jpg)
   background-size: cover
   background-position: center bottom
-  color: #fff
+  color: $white
 
 .home-hero
   text-align: center
