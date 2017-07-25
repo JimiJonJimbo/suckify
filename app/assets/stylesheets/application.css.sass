@@ -24,9 +24,6 @@ $light: #f1f1f1
 $dark:  #3d3d3d
 $black: #000000
 
-*
-  border-radius: 0 !important
-
 body
   font-family: 'Oxygen', sans-serif
   background-color: $light
@@ -69,8 +66,10 @@ label
 
 // homepage
 
-@media screen and (min-width: 768px)
-  .container .jumbotron, .container-fluid .jumbotron
+.container .jumbotron, .container-fluid .jumbotron
+  border-radius: 0
+  
+  @media screen and (min-width: 768px)
     padding-left: 30px
     padding-right: 30px
 
@@ -79,6 +78,7 @@ label
   background-size: cover
   background-position: center bottom
   color: $white
+  border-radius: 0
 
 .home-hero
   text-align: center
