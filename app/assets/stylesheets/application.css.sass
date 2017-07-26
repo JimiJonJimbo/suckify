@@ -42,13 +42,9 @@ body
   max-width: 350px
   margin: 0 auto
 
-.medium-centered
-  max-width: 550px
-  margin: 0 auto
-
-.medium-centered-flash
-  max-width: 550px
-  margin: 0 auto 20px
+// .medium-centered
+//   max-width: 550px
+//   margin: 0 auto
 
 // disable the extra large breakpoint
 
@@ -68,7 +64,7 @@ label
 
 .container .jumbotron, .container-fluid .jumbotron
   border-radius: 0
-  
+
   @media screen and (min-width: 768px)
     padding-left: 30px
     padding-right: 30px
@@ -76,7 +72,7 @@ label
 .jumbotron
   background: $dark url(hero.jpg)
   background-size: cover
-  background-position: center bottom
+  background-position: center center
   color: $white
   border-radius: 0
 
@@ -85,10 +81,14 @@ label
   margin-bottom: 30px
 
   @media screen and (min-width: 768px)
-    margin-top: 180px
+    margin-top: 75px
+
+  @media screen and (min-width: 992px)
+    margin-top: 150px
 
 .home-hero-heading
-  font-weight: 700
+  font-family: 'Roboto Condensed'
+  font-weight: 300
   font-size: 48px
   margin-top: 15px
 
@@ -97,6 +97,7 @@ label
 
 .home-hero-subheading
   font-size: 24px
+  font-weight: 300
 
 .home-hero-button
   text-align: center
