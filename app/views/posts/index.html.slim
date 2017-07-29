@@ -1,2 +1,5 @@
-.medium-centered
-  = render partial: 'shared/post', collection: @posts
+- @posts.each_slice(3) do |p1, p2, p3|
+  .row
+    .col-md-4 = render partial: 'shared/post', locals: { post: p1 }
+    .col-md-4 = render partial: 'shared/post', locals: { post: p2 }
+    .col-md-4 = render partial: 'shared/post', locals: { post: p3 }

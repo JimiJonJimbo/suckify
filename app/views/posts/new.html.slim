@@ -1,8 +1,7 @@
-.medium-centered
-  .panel.panel-default
-    .panel-body
-      h2 New post
-      = simple_form_for @post do |f|
-        = f.input :link
-        = f.input :title
-        = f.button :submit, class: "btn btn-primary"
+.panel.panel-default
+  .panel-body
+    h2 New post
+    = simple_form_for @post do |f|
+      = f.input :link
+      = f.input :title
+      = f.button :submit, class: "btn btn-primary"
