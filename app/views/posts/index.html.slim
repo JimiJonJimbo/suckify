@@ -1,5 +1,5 @@
 - @posts.each_slice(3) do |p1, p2, p3|
   .row
-    .col-sm-4 = render partial: 'shared/post', locals: { post: p1 }
-    .col-sm-4 = render partial: 'shared/post', locals: { post: p2 }
-    .col-sm-4 = render partial: 'shared/post', locals: { post: p3 }
+    .col-sm-4 = render partial: 'shared/post', locals: { post: p1 } if p1
+    .col-sm-4 = render partial: 'shared/post', locals: { post: p2 } if p2
+    .col-sm-4 = render partial: 'shared/post', locals: { post: p3 } if p3
