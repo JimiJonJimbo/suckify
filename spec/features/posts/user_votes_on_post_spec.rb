@@ -20,17 +20,17 @@ feature 'User votes on post' do
 
     scenario 'can vote' do
       visit post_path(post)
-      expect(page).to have_content '0 votes'
+      expect(first('div.post-votes').text).to eq '0'
       find('.vote').click
-      expect(page).to have_content 'Voted'
-      expect(page).to have_content '1 vote'
+      expect(page).not_to have_content('.vote')
+      expect(first('div.post-votes').text).to eq '1'
     end
 
     scenario 'cannot vote if they have already voted' do
       post.liked_by user
       visit post_path(post)
-      expect(page).to have_content 'Voted'
-      expect(page).to have_content '1 vote'
+      expect(page).not_to have_content('.vote')
+      expect(first('div.post-votes').text).to eq '1'
     end
   end
 end

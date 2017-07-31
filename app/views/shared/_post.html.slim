@@ -7,10 +7,10 @@
     .post-votes
       .vote-panel id="#{post.id}-vote"
         - if current_user and current_user.voted_for? post
-          = render 'shared/voted'
+          = render 'shared/vote'
         - else
           = link_to vote_post_path(post), class: 'vote', method: :put, remote: true do
             = render 'shared/vote'
       .votes-panel id="#{post.id}-votes"
-        = "#{pluralize post.votes_for.size, 'vote'}"
+        = post.votes_for.size
     .post-info = "Posted by #{post.user.username} #{time_ago_in_words(post.created_at)} ago"
