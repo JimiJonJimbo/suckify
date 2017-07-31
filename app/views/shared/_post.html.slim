@@ -1,7 +1,7 @@
 .panel.panel-default
   .panel-body
-    .post-thumbnail
-      = link_to image_tag(post.thumbnail, class: "img-thumbnail"), post.link
+    .post-thumbnail-container
+      = link_to image_tag(post.thumbnail, class: 'post-thumbnail'), post.link
     .post-title
       h4 = link_to post.title, post.link
     .post-votes
