@@ -2,8 +2,11 @@
   .panel-body
     .post-thumbnail-container
       = link_to image_tag(post.thumbnail, class: 'post-thumbnail'), post.link
-    .post-title
-      h4 = link_to post.title, post.link
+    .post-info
+      .post-title
+        h4 = link_to post.title, post.link
+      .post-time
+        = "Posted by #{post.user.username} #{time_ago_in_words(post.created_at)} ago"
     .post-votes
       .vote-panel id="#{post.id}-vote"
         - if current_user and current_user.voted_for? post
@@ -13,4 +16,3 @@
             = render 'shared/vote'
       .votes-panel id="#{post.id}-votes"
         = post.votes_for.size
-    .post-info = "Posted by #{post.user.username} #{time_ago_in_words(post.created_at)} ago"
