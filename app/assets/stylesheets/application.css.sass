@@ -14,7 +14,7 @@
  *= require_self
  */
 
-$panel-body-padding: 15px
+$panel-body-padding: 10px
 $grid-gutter-width: 20px
 $nav-link-padding: 10px 10px
 
@@ -23,10 +23,11 @@ $nav-link-padding: 10px 10px
 
 // general styles
 
-$white: #ffffff
-$light: #f1f1f1
-$dark:  #3d3d3d
-$black: #000000
+$white:  #ffffff
+$light:  #f1f1f1
+$medium: #c3c3c3
+$dark:   #3d3d3d
+$black:  #000000
 
 body
   font-family: 'Oxygen', sans-serif
@@ -117,6 +118,7 @@ label
 
 .post-thumbnail-container
   text-align: center
+  padding: 10px
 
 .post-thumbnail
   max-width: 100%
@@ -129,8 +131,9 @@ label
   @media screen and (min-width: 992px)
     height: 150px
 
-.post-info
+.post-info-container
   float: left
+  height: 56px
 
 .post-title
   font-family: 'Roboto Condensed', sans-serif
@@ -139,9 +142,18 @@ label
   font-size: 12px
   font-weight: 300
 
-.post-votes
+.post-votes-container
   float: right
+  height: 46px
+  margin-top: 10px
+  padding-left: 10px
+  text-align: center
+  border-left: 1px solid $medium
 
 .vote-panel
+  font-size: 20px
+  color: $medium
 
 .votes-panel
+  font-family: 'Roboto Condensed', sans-serif
+  color: $medium
