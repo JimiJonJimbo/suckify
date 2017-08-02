@@ -1,3 +1,22 @@
+.jumbotron
+  .row.home-hero
+    .col-sm-4
+      .home-hero-heading
+        | Share
+      .home-hero-subheading
+        | things&nbsp;that&nbsp;suck.
+    .col-sm-4
+      .home-hero-heading
+        | Discover
+      .home-hero-subheading
+        | things&nbsp;that&nbsp;suck.
+    .col-sm-4
+      .home-hero-heading
+        | Become
+      .home-hero-subheading
+        | a&nbsp;suckier&nbsp;person.
+  .home-hero-button
+    = link_to "Share something that sucks.", new_post_path, class: "btn btn-lg btn-primary"
 - @posts.each_slice(3) do |p1, p2, p3|
   .row
     .col-md-4 = render partial: 'shared/post', locals: { post: p1 } if p1
