@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'validate_url'
 
 group :development do
+  gem 'rails_real_favicon'
   gem 'spring'
   gem 'spring-commands-rspec'
 end
