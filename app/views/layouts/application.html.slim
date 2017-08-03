@@ -5,7 +5,7 @@ html
     = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Roboto+Condensed:400,700'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    = display_meta_tags site: 'Suckify'
+    = display_meta_tags site: 'Suckify', image_src: image_path('logo.png'), description: 'Share things that suck. Discover things that suck. Become a suckier person. With Suckfiy, you have the power.'
     = render 'application/favicon'
     meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
   body
