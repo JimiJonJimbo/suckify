@@ -5,7 +5,10 @@ html
     = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Oxygen:300,400,700|Roboto+Condensed:400,700'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    = display_meta_tags site: 'Suckify'
+    = display_meta_tags site: 'Suckify',
+                        og: { url: 'http://www.suckify.com/',
+                              image: image_url('logo-large.png'),
+                              description: 'Share things that suck. Discover things that suck. Become a suckier person. Suckify gives you the power.' }
     = render 'application/favicon'
     meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
   body
