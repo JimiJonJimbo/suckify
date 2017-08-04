@@ -19,8 +19,6 @@
         | a&nbsp;suckier&nbsp;person.
   .home-hero-button
     = link_to "Share something that sucks.", new_post_path, class: "btn btn-lg btn-primary"
-- @posts.each_slice(3) do |p1, p2, p3|
-  .row
-    .col-md-4 = render partial: 'shared/post', locals: { post: p1 } if p1
-    .col-md-4 = render partial: 'shared/post', locals: { post: p2 } if p2
-    .col-md-4 = render partial: 'shared/post', locals: { post: p3 } if p3
+.row
+  - @posts.each do |post|
+    .col-md-4.col-sm-6.col-xs-12 = render partial: 'shared/post', locals: { post: post }
