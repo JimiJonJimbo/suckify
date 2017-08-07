@@ -36,8 +36,8 @@ class PostsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to new_user_session_path, notice: "You must log in to vote.", status: 303 }
         format.js do
-          flash[:notice] = "You must log in to vote."
-          flash.keep(:notice)
+          flash[:alert] = t('devise.failure.unauthenticated')
+          flash.keep(:alert)
           render js: "window.location.pathname = #{new_user_session_path.to_json}"
         end
       end
