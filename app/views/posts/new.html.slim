@@ -1,9 +1,13 @@
 - title 'New post'
 
-.panel.panel-default
-  .panel-body
-    h2 New post
-    = simple_form_for @post do |f|
-      = f.input :link
-      = f.input :title
-      = f.button :submit, class: "btn btn-primary"
+.row
+  .col-sm-6.col-sm-offset-3.col-xs-12
+    .panel.panel-default.form-panel
+      .panel-body
+        h2.form-heading New post
+        = simple_form_for @post do |f|
+          .form-inputs
+            = f.input :link
+            = f.input :title
+          .form-actions
+            = f.button :submit, class: "btn btn-primary form-button"
