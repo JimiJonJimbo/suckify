@@ -18,7 +18,7 @@
       .home-hero-subheading
         | a&nbsp;suckier&nbsp;person.
   .home-hero-button
-    = link_to "Share something that sucks.", new_post_path, class: "btn btn-lg btn-primary"
+    = link_to "Share something that sucks", new_post_path, class: "btn btn-lg btn-primary"
 .row
   - @posts.each do |post|
     .col-md-4.col-sm-6.col-xs-12 = render partial: 'shared/post', locals: { post: post }

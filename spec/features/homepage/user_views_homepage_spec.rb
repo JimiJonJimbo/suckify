@@ -20,7 +20,7 @@ feature 'User views homepage' do
 
     scenario 'must log in to post' do
       visit root_path
-      click_on 'Share something that sucks.'
+      click_on 'Share something that sucks'
       expect(current_path).to eq new_user_session_path
     end
 
@@ -47,7 +47,7 @@ feature 'User views homepage' do
 
     scenario 'can post' do
       visit root_path
-      click_on 'Share something that sucks.'
+      click_on 'Share something that sucks'
       expect(current_path).to eq new_post_path
     end
   end
