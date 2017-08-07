@@ -8,6 +8,7 @@ FactoryGirl.define do
 
   factory :user do
     username 'walt'
+    login 'walt'
     email 'walt@meth.com'
     password 'jesseisstupid'
   end

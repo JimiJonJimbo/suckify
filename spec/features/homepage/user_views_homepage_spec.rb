@@ -23,6 +23,15 @@ feature 'User views homepage' do
       click_on 'Share something that sucks.'
       expect(current_path).to eq new_user_session_path
     end
+
+    scenario 'can log in without warden helper' do
+      visit root_path
+      click_on 'Log in'
+      fill_in 'Login', with: user.login
+      fill_in 'Password', with: user.password
+      click_button 'Log in'
+      expect(page).to have_content 'Signed in successfully.'
+    end
   end
 
   context 'when logged in' do
