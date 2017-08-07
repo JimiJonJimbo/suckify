@@ -13,5 +13,5 @@
             = f.input :remember_me, wrapper_html: { class: 'remember-me-forgot-password' }, as: :boolean if devise_mapping.rememberable?
             = link_to "Forgot your password?", new_password_path(resource_name), class: 'forgot-password'
           .form-actions
-            = f.button :submit, "Log in", class: 'btn-primary btn-lg form-button'
+            = f.button :submit, "Log in", class: 'btn-primary form-button'
         = render "devise/shared/links"
