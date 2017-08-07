@@ -10,7 +10,11 @@ describe Post do
       expect(build(:post, thumbnail: 'blah')).not_to be_valid
     end
 
-    it 'responds with false if title is not present' do
+    it 'responds with true if thumbnail is blank' do
+      expect(build(:post, thumbnail: '')).to be_valid
+    end
+
+    it 'responds with false if title is blank' do
       expect(build(:post, title: '')).not_to be_valid
     end
   end

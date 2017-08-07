@@ -3,9 +3,9 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
 
-  validates :link, url: true
-  validates :thumbnail, url: true, allow_blank: true
+  validates :link, presence: true, url: true
   validates :title, presence: true
+  validates :thumbnail, url: true, allow_blank: true
 
   def score
     s = votes_for.count
