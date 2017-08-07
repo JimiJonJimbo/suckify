@@ -27,7 +27,7 @@ feature 'User views homepage' do
     scenario 'can log in without warden helper' do
       visit root_path
       click_on 'Log in'
-      fill_in 'Login', with: user.login
+      fill_in 'Username or email', with: user.login
       fill_in 'Password', with: user.password
       click_button 'Log in'
       expect(page).to have_content 'Signed in successfully.'
