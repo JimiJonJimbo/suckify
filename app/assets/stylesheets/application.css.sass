@@ -98,6 +98,8 @@ h1, h2, h3, h4, h5, h6
 
   &:focus
     box-shadow: none
+    background-color: $state-info-bg
+    transition: background-color ease-in-out 0.15s
 
 .form-actions
   text-align: center
@@ -117,6 +119,15 @@ h1, h2, h3, h4, h5, h6
 .forgot-password
   font-weight: 300
   float: right
+
+.has-error .form-control
+  border-bottom: 1px solid $medium
+  box-shadow: none
+
+  &:focus
+    box-shadow: none
+    background-color: $state-danger-bg
+
 
 // homepage
 
