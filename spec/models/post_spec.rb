@@ -9,6 +9,10 @@ describe Post do
     it 'responds with false if thumbnail is not a valid url' do
       expect(build(:post, thumbnail: 'blah')).not_to be_valid
     end
+
+    it 'responds with false if title is not present' do
+      expect(build(:post, title: '')).not_to be_valid
+    end
   end
 
   describe '#score' do

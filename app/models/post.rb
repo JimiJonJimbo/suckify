@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
 
   validates :link, url: true
   validates :thumbnail, url: true, allow_blank: true
+  validates :title, presence: true
 
   def score
     s = votes_for.count
