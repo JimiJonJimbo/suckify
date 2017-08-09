@@ -25,3 +25,6 @@
 ehthumbs.db
 Thumbs.db
 .byebug_history
+
+.env
+Procfile

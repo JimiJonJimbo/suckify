@@ -27,6 +27,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'foreman'
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
