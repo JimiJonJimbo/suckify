@@ -58,7 +58,6 @@ GEM
       sass (>= 3.2.19)
     builder (3.2.3)
     byebug (9.0.6)
-    camo (0.1.0)
     capybara (2.13.0)
       addressable
       mime-types (>= 1.16)
@@ -302,7 +301,6 @@ PLATFORMS
 DEPENDENCIES
   acts_as_votable
   bootstrap-sass
-  camo
   capybara
   capybara-webkit
   coffee-rails (~> 4.0.0)

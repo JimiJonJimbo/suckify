@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 
 gem 'acts_as_votable'
 gem 'bootstrap-sass'
-gem 'camo'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'friendly_id'
