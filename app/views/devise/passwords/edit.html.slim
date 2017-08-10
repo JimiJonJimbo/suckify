@@ -1,12 +1,18 @@
-h2
-  | Change your password
-= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-  = f.error_notification
-  = f.input :reset_password_token, as: :hidden
-  = f.full_error :reset_password_token
-  .form-inputs
-    = f.input :password, label: "New password", required: true, autofocus: true
-    = f.input :password_confirmation, label: "Confirm your new password", required: true
-  .form-actions
-    = f.button :submit, "Change my password"
-= render "devise/shared/links"
+- title 'Reset password'
+
+.row
+  .col-sm-6.col-sm-offset-3.col-xs-12
+    .panel.panel-default.form-panel
+      .panel-body
+        h2.form-heading
+          | Reset password
+        = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+          = f.error_notification
+          = f.input :reset_password_token, as: :hidden
+          = f.full_error :reset_password_token
+          .form-inputs
+            = f.input :password, label: 'New password', required: true, autofocus: true
+            = f.input :password_confirmation, label: 'Confirm new password', required: true
+          .form-actions
+            = f.button :submit, 'Reset password', class: 'btn btn-primary form-button'
+        = render 'devise/shared/links'
