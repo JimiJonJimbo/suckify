@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
 
+    @post.thumbnail = LinkThumbnailer.generate(@post.link).images.first if @post.link.present?
+
     if @post.save
       redirect_to @post, notice: "Post successfully created."
     else
