@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @post.thumbnail = LinkThumbnailer.generate(@post.link).images.first if @post.link.present?
 
     if @post.save
-      redirect_to @post, notice: "Post successfully created."
+      redirect_to @post, notice: "Your post has been created."
     else
       render 'new'
     end
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { redirect_to new_user_session_path, notice: "You must log in to vote.", status: 303 }
+        format.html { redirect_to new_user_session_path, notice: t('devise.failure.unauthenticated'), status: 303 }
         format.js do
           flash[:alert] = t('devise.failure.unauthenticated')
           flash.keep(:alert)

@@ -30,7 +30,7 @@ feature 'User views homepage' do
       fill_in 'Username or email', with: user.login
       fill_in 'Password', with: user.password
       click_button 'Log in'
-      expect(page).to have_content ActionView::Base.full_sanitizer.sanitize(I18n.t('devise.sessions.signed_in'))
+      expect(page.html).to include I18n.t('devise.sessions.signed_in')
     end
   end
 

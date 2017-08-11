@@ -8,7 +8,7 @@ feature 'User votes on post' do
     scenario 'must log in to vote' do
       visit post_path(post)
       find('.vote').click
-      expect(page).to have_content 'You must log in to vote.'
+      expect(page.html).to include I18n.t('devise.failure.unauthenticated')
       expect(page).to have_content 'Log in'
     end
   end
