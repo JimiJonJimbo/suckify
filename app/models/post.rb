@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :thumbnail, url: true, allow_blank: true
 
-  before_save :update_score
+  after_save :update_score
 
   def update_score
     s = votes_for.count
@@ -22,6 +22,6 @@ class Post < ActiveRecord::Base
     end
 
     seconds = created_at.to_i - 1134028003
-    self.score = (sign * order + seconds / 45000.to_f).round(7)
+    update_column(:score, (sign * order + seconds / 45000.to_f).round(7))
   end
 end
