@@ -14,7 +14,6 @@ class PostsController < ApplicationController
   end
 
   def index
-    # @posts = Post.all.sort_by(&:score).reverse
     @posts = Post.all.sort_by { |post| [post.score, post.created_at] }.reverse
   end
 
@@ -28,7 +27,7 @@ class PostsController < ApplicationController
 
   def vote
     @post = Post.find(params[:id])
-    @post.upvote_by current_user
+    @post.save if @post.upvote_by current_user # to update score
 
     if current_user
       respond_to do |format|
