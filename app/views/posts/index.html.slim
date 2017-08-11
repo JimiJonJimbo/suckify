@@ -22,5 +22,4 @@
 .row
   - @posts.each do |post|
     .col-md-4.col-sm-6.col-xs-12 = render partial: 'shared/post', locals: { post: post }
-.pagination-panel
-  = will_paginate @posts
+= will_paginate @posts
