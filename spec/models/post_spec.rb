@@ -19,9 +19,14 @@ describe Post do
     end
   end
 
-  describe '#score' do
-    it 'responds with score' do
-      expect(build(:post, created_at: Date.new(2015, 1, 1)).score).to eq 6356.0
+  describe '#update_score' do
+    it 'updates score' do
+      post = create(:post, created_at: Date.new(2015, 1, 1))
+      post.update_score
+      expect(post.score).to eq 6356.4977111
+      allow(post).to receive(:votes_for).and_return(double(count: 2))
+      post.update_score
+      expect(post.score).not_to eq 6356.4977111
     end
   end
 end
