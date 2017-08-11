@@ -1,7 +1,13 @@
 .panel.panel-default
   .panel-body
     .post-thumbnail-container
-      = link_to image_tag(post.thumbnail, class: 'post-thumbnail'), post.link
+      - if post.thumbnail.present?
+        = link_to image_tag(post.thumbnail, class: 'post-thumbnail'), post.link
+      - else
+        = link_to post.link do
+          .post-thumbnail
+            .no-thumbnail
+              i.glyphicon.glyphicon-thumbs-down
     .post-info-container
       .post-title
         = link_to post.title, post.link
