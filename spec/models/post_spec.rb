@@ -20,12 +20,11 @@ describe Post do
   end
 
   describe '#update_score' do
-    it 'updates score' do
+    it 'updates score before save' do
       post = create(:post, created_at: Date.new(2015, 1, 1))
-      post.update_score
       expect(post.score).to eq 6356.4977111
       allow(post).to receive(:votes_for).and_return(double(count: 2))
-      post.update_score
+      post.save
       expect(post.score).not_to eq 6356.4977111
     end
   end
