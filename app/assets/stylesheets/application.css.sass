@@ -21,6 +21,12 @@ $nav-link-padding: 10px 10px
 @import "bootstrap-sprockets"
 @import "bootstrap"
 
+// disable the extra large breakpoint
+
+@media screen and (min-width: 992px)
+  .container
+    width: 992px
+
 // general styles
 
 $white:  #ffffff
@@ -76,12 +82,6 @@ h1, h2, h3, h4, h5, h6
 .alert
   border-radius: 0
 
-// disable the extra large breakpoint
-
-@media screen and (min-width: 992px)
-  .container
-    width: 992px
-
 // forms
 
 .form-panel
@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5, h6
 .remember-me-forgot-password
   display: inline
 
-  & div
+  div
     display: inline
 
 .forgot-password
@@ -180,6 +180,20 @@ abbr[title]
 .home-hero-button
   text-align: center
 
+.pagination-panel
+  text-align: center
+
+  a, span
+    padding: 0.2em 0.3em
+
+  .current
+    font-style: normal
+    background-color: $medium
+    display: inline-block
+    width: 1.4em
+    height: 1.4em
+    border-radius: 1em
+
 // posts
 
 .post-thumbnail-container
@@ -199,13 +213,13 @@ abbr[title]
   width: 100%
   height: 100%
 
-.no-thumbnail i
-  color: $medium
-  font-size: 96px
-  line-height: 200px
+  i
+    color: $medium
+    font-size: 96px
+    line-height: 200px
 
-  @media screen and (min-width: 768px)
-    line-height: 150px
+    @media screen and (min-width: 768px)
+      line-height: 150px
 
 .post-info-container
   float: left

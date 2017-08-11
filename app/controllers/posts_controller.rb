@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.sort_by { |post| [post.score, post.created_at] }.reverse
+    @posts = Post.order(score: :desc).paginate(page: params[:page], per_page: 12)
   end
 
   def new
