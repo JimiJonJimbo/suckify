@@ -14,7 +14,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.sort_by(&:score).reverse
+    # @posts = Post.all.sort_by(&:score).reverse
+    @posts = Post.all.sort_by { |post| [post.score, post.created_at] }.reverse
   end
 
   def new
