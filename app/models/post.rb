@@ -9,6 +9,8 @@ class Post < ActiveRecord::Base
 
   after_save :update_score
 
+  IMAGE_FILE_EXTENSIONS = ['.jpg', '.jpeg', '.gif', '.png', '.bmp']
+
   def update_score
     s = votes_for.count
     order = Math.log([s, 1].max, 10)
@@ -28,13 +30,17 @@ class Post < ActiveRecord::Base
   def get_thumbnail
     return unless link.present?
 
-    if is_image?(link)
+    if link_is_image?
       update(thumbnail: link)
     else
       update(thumbnail: LinkThumbnailer.generate(link).images.first)
     end
   end
 
-  def is_image?(link)
+  def link_is_image?
+    IMAGE_FILE_EXTENSIONS.each do |extension|
+      return true if link.downcase.end_with?(extension)
+    end
+    false
   end
 end

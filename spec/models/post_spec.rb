@@ -32,17 +32,29 @@ describe Post do
   describe '#get_thumbnail' do
     it 'sets thumbnail equal to link if link is an image' do
       post = create(:post, link: 'http://www.example.com/example.png')
-      allow(post).to receive(:is_image?).and_return(true)
+      allow(post).to receive(:link_is_image?).and_return(true)
       post.get_thumbnail
       expect(post.thumbnail).to eq(post.link)
     end
 
     it 'uses LinkThumbnailer to get thumbnail if link is not an image' do
       post = create(:post, link: 'http://www.example.com/')
-      allow(post).to receive(:is_image?).and_return(false)
+      allow(post).to receive(:link_is_image?).and_return(false)
       allow(LinkThumbnailer).to receive(:generate).and_return(double(images: ['http://www.example.com/example.png']))
       post.get_thumbnail
       expect(post.thumbnail).to eq('http://www.example.com/example.png')
+    end
+  end
+
+  describe '#link_is_image?' do
+    it 'returns true if link ends with an image file extension' do
+      post = create(:post, link: 'http://www.example.com/example.png')
+      expect(post.link_is_image?).to eq(true)
+    end
+
+    it 'returns false if link does not end with an image file extension' do
+      post = create(:post, link: 'http://www.example.com/')
+      expect(post.link_is_image?).to eq(false)
     end
   end
 end
