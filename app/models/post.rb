@@ -24,4 +24,17 @@ class Post < ActiveRecord::Base
     seconds = created_at.to_i - 1134028003
     update_column(:score, (sign * order + seconds / 45000.to_f).round(7))
   end
+
+  def get_thumbnail
+    return unless link.present?
+
+    if is_image?(link)
+      update(thumbnail: link)
+    else
+      update(thumbnail: LinkThumbnailer.generate(link).images.first)
+    end
+  end
+
+  def is_image?(link)
+  end
 end

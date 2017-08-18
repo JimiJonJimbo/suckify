@@ -28,4 +28,21 @@ describe Post do
       expect(post.score).not_to eq 6356.4977111
     end
   end
+
+  describe '#get_thumbnail' do
+    it 'sets thumbnail equal to link if link is an image' do
+      post = create(:post, link: 'http://www.example.com/example.png')
+      allow(post).to receive(:is_image?).and_return(true)
+      post.get_thumbnail
+      expect(post.thumbnail).to eq(post.link)
+    end
+
+    it 'uses LinkThumbnailer to get thumbnail if link is not an image' do
+      post = create(:post, link: 'http://www.example.com/')
+      allow(post).to receive(:is_image?).and_return(false)
+      allow(LinkThumbnailer).to receive(:generate).and_return(double(images: ['http://www.example.com/example.png']))
+      post.get_thumbnail
+      expect(post.thumbnail).to eq('http://www.example.com/example.png')
+    end
+  end
 end
