@@ -39,7 +39,7 @@ class Post < ActiveRecord::Base
 
   def link_is_image?
     IMAGE_FILE_EXTENSIONS.each do |extension|
-      return true if link.downcase.end_with?(extension)
+      return true if link.downcase.include?(extension)
     end
     false
   end

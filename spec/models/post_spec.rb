@@ -47,8 +47,8 @@ describe Post do
   end
 
   describe '#link_is_image?' do
-    it 'returns true if link ends with an image file extension' do
-      post = create(:post, link: 'http://www.example.com/example.png')
+    it 'returns true if link contains an image file extension' do
+      post = create(:post, link: 'http://www.example.com/example.png?blah=blah')
       expect(post.link_is_image?).to eq(true)
     end
 
