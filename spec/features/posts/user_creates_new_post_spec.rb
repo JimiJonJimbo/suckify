@@ -17,7 +17,7 @@ feature 'User creates new post' do
       fill_in 'Link', with: 'http://www.example.com/'
       fill_in 'Title', with: 'This site sucks'
       click_on 'Create Post'
-      expect(current_path).to start_with '/posts/'
+      expect(current_path).to eq root_path
       expect(page).to have_content 'Your post has been created.'
       expect(page).to have_link 'This site sucks', href: 'http://www.example.com/'
       expect(page).to have_content user.username

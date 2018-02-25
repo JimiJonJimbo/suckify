@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @post.get_thumbnail
 
     if @post.save
-      redirect_to @post, notice: "Your post has been created."
+      redirect_to root_path, notice: "Your post has been created."
     else
       render 'new'
     end
